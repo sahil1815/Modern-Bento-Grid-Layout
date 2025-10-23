@@ -1,0 +1,295 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f8;
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Bento Grid Layout --- */
+.bento-parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.box {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.box h1,
+.box h2 {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.box h1 {
+  font-size: 2rem;
+}
+.box h2 {
+  font-size: 1.5rem;
+}
+.box p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+/* --- Individual Box Styles --- */
+.create {
+  grid-row: span 4;
+  grid-column: span 1;
+  background: #fde5cd;
+  justify-content: center;
+  gap: 20px;
+}
+.create h1 span {
+  color: #7751dc;
+  font-style: italic;
+}
+.create button {
+  background-color: #fecc69;
+  border-radius: 12px;
+  padding: 15px 25px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.create button:hover {
+  background-color: #fdbe52;
+  color: #6431f1;
+}
+
+.social {
+  grid-row: span 2;
+  grid-column: span 2;
+  background-color: #7751dc;
+  color: white;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 70px 0px;
+}
+.social h1,
+.social p {
+  color: white;
+}
+.social .highlight {
+  color: #e49dff;
+}
+.social .reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.social .stars {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  width: 32px;
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule {
+  grid-row: span 6;
+  grid-column: span 1;
+  background-color: #dcd1fc;
+}
+
+.write {
+  grid-row: span 3;
+  grid-column: span 1;
+  background-color: #fecc69;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.write img {
+    width: 320px;
+}
+
+.manage {
+  grid-row: span 4;
+  grid-column: span 1;
+  background-color: white;
+  justify-content: flex-start;
+}
+
+.maintain {
+  grid-row: span 4;
+  grid-column: span 1;
+
+  background-color: #fecc69;
+  padding-top: 30px;
+  padding-bottom: 0;
+}
+
+.maintain img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.growth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+}
+.growth img {
+  width: 180px;
+  margin: 0;
+}
+.growth .growth-text h1 {
+  font-size: 3rem;
+}
+.followers {
+  grid-row: span 1;
+  grid-column: span 2;
+  background-color: #7751dc;
+  align-items: center;
+  gap: 20px;
+}
+
+.followers img {
+  width: 110px;
+  margin: 0;
+}
+.followers h2 {
+  color: white;
+}
+
+/* --- Scrollable Accounts List --- */
+.accounts-container {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 15px;
+  margin-top: 20px;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  max-width: 288px;
+}
+.accounts-container::-webkit-scrollbar {
+  display: none;
+}
+
+.account-card {
+  flex-shrink: 0;
+  width: 190px;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f8;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  padding: 8px;
+  margin-right: 12px;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+.account-card:hover {
+  transform: scale(1.03);
+}
+.account-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fef8e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.account-icon i {
+  font-size: 24px;
+  color: #a7872a;
+}
+.account-info {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+.account-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+.follower-count {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .bento-parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box {
+    grid-column: span 1 !important;
+  }
+  .social,
+  .followers {
+    grid-column: span 2 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body {
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  .bento-parent {
+    grid-template-columns: 1fr;
+  }
+  .box,
+  .social,
+  .followers {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+  .box h1 {
+    font-size: 1.8rem;
+  }
+  .box h2 {
+    font-size: 1.3rem;
+  }
+}
